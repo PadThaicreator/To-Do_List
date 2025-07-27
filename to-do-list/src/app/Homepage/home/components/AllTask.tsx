@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, PencilLine, Trash2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const AllTaskSection = () => {
@@ -30,9 +31,17 @@ export const AllTaskSection = () => {
       updatedAt: new Date(),
     },
   ]);
+
+  const router = useRouter();
   return (
     <div className="flex flex-1 flex-col">
-      All Task
+      <div className="flex items-center justify-between p-4">
+        <div>All Task</div>
+
+        <div className="flex py-2 px-4 rounded-2xl bg-blue-400 text-white cursor-pointer hover:bg-blue-500 duration-300" onClick={()=>router.push("/Homepage/addTask")}>
+          Add Task
+        </div>
+      </div>
       <div className="flex flex-col gap-4">
         {allTask.map((item: any, index: number) => (
           <div
@@ -57,9 +66,18 @@ export const AllTaskSection = () => {
             </div>
             <div>{item.status}</div>
             <div className="flex gap-4">
-              <Check className="rounded-full bg-green-500 p-2 text-white" size={34} />
-              <PencilLine className="rounded-full bg-amber-500 p-2 text-white" size={34} />
-              <Trash2 className="rounded-full bg-red-500 p-2 text-white"  size={34} />
+              <Check
+                className="rounded-full bg-green-500 p-2 text-white cursor-pointer"
+                size={34}
+              />
+              <PencilLine
+                className="rounded-full bg-amber-500 p-2 text-white cursor-pointer"
+                size={34}
+              />
+              <Trash2
+                className="rounded-full bg-red-500 p-2 text-white cursor-pointer"
+                size={34}
+              />
             </div>
           </div>
         ))}

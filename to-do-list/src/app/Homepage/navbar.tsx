@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+
+  const router = useRouter();
   return (
-    <div className="flex flex-1 p-4 justify-between items-center bg-blue-200">
+    <div className="flex flex-1 p-4 justify-between items-center bg-blue-300">
       <div className="flex items-center gap-2 justify-center">
         <Image
           src="/LOGO_TO_DO_LIST.png"
@@ -17,10 +20,10 @@ export default function Navbar() {
           <em>My ToDo List</em>
         </b>
       </div>
-      <div className="flex gap-10 mr-10">
-        <div>Home</div>
-        <div>Add Task</div>
-        <div>Profile</div>
+      <div className="flex gap-10 mr-10 text-white">
+        <div className="cursor-pointer" onClick={()=>router.push("/Homepage/home")}>Home</div>
+        <div className="cursor-pointer" onClick={()=>router.push("/Homepage/addTask")}>Add Task</div>
+        <div className="cursor-pointer">Profile</div>
       </div>
     </div>
   );

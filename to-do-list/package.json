@@ -9,10 +9,13 @@
     "start": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && npm run electron\""
   },
   "dependencies": {
+    "dotenv": "^17.2.0",
     "lucide-react": "^0.525.0",
+    "mongoose": "^8.16.4",
     "next": "15.4.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sweetalert2": "^11.22.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

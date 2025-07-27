@@ -5,6 +5,14 @@
 .input-block {
   @apply border border-gray-300 p-2 rounded;
 }
+
+.form-task {
+  @apply flex flex-col gap-4 bg-white p-4 rounded-2xl shadow-md ;
+}
+
+.btn {
+  @apply bg-blue-400 py-1 px-5 text-white rounded-2xl cursor-pointer hover:bg-blue-500
+}
 /* 
 :root {
   --background: #ffffff;
